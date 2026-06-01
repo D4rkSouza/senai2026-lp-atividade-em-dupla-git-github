@@ -1,0 +1,145 @@
+/* Importando as fontes para o visual do Valorant */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* Paleta Oficial Valorant */
+:root {
+    --valo-red: #ff4655;
+    --valo-dark: #0f1923;
+    --valo-light: #ece8e1;
+    --valo-gray: #768079;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.segunda-pagina {
+    font-family: 'Roboto', sans-serif;
+    color: var(--valo-light);
+    /* Fundo de tela épico do jogo com uma camada escura para o texto brilhar */
+    background: linear-gradient(rgba(15, 25, 35, 0.85), rgba(15, 25, 35, 0.95)),
+                url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt727ed2d4af2070ea/6246536b53cb1256037a4db7/Valorant_2022_Ep4_Act2_KeyArt_Textless_1920x1080.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Caixa Principal */
+.valo-container {
+    background: rgba(15, 25, 35, 0.6);
+    border: 1px solid var(--valo-gray);
+    padding: 60px 50px;
+    max-width: 700px;
+    text-align: left;
+    position: relative;
+    backdrop-filter: blur(8px);
+    /* Cortando o canto inferior direito típico do UI do Valorant */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Quadrado vermelho decorativo na esquerda */
+.ui-decor {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 10px;
+    height: 50px;
+    background-color: var(--valo-red);
+}
+
+/* Tipografia Estilo Tungsten */
+.valo-container h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--valo-light);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.valo-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #b0b8b4;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* === O BOTÃO VANDAL === */
+.vandal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid var(--valo-red);
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* Cortando as pontinhas para o visual angulado */
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+/* Texto do botão */
+.btn-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: var(--valo-red);
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+/* Imagem da Vandal dentro do botão */
+.vandal-img {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(255, 70, 85, 0.5));
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Fundo vermelho que desliza ao passar o mouse */
+.vandal-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--valo-red);
+    z-index: 1;
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Efeitos de Hover (Quando o mouse passa em cima) */
+.vandal-btn:hover::before {
+    width: 100%;
+}
+
+.vandal-btn:hover .btn-text {
+    color: var(--valo-light);
+}
+
+.vandal-btn:hover .vandal-img {
+    /* Faz a Vandal apontar levemente pra frente e brilhar branco */
+    transform: translateX(10px) scale(1.05);
+    filter: brightness(2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+/* Efeito de glitch/foco ao clicar */
+.vandal-btn:active {
+    transform: scale(0.98);
+}
