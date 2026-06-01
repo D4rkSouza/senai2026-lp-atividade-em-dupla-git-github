@@ -1,0 +1,1 @@
+# senai2026-lp-atividade-em-dupla-git-github
