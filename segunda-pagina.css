@@ -19,7 +19,6 @@
 body.segunda-pagina {
     font-family: 'Roboto', sans-serif;
     color: var(--valo-light);
-    /* Fundo de tela épico do jogo com uma camada escura para o texto brilhar */
     background: linear-gradient(rgba(15, 25, 35, 0.85), rgba(15, 25, 35, 0.95)),
                 url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt727ed2d4af2070ea/6246536b53cb1256037a4db7/Valorant_2022_Ep4_Act2_KeyArt_Textless_1920x1080.jpg') center/cover no-repeat fixed;
     min-height: 100vh;
@@ -38,7 +37,6 @@ body.segunda-pagina {
     text-align: left;
     position: relative;
     backdrop-filter: blur(8px);
-    /* Cortando o canto inferior direito típico do UI do Valorant */
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
@@ -87,7 +85,6 @@ body.segunda-pagina {
     overflow: hidden;
     transition: all 0.3s ease;
     cursor: pointer;
-    /* Cortando as pontinhas para o visual angulado */
     clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
 }
 
@@ -103,7 +100,7 @@ body.segunda-pagina {
 
 /* Imagem da Vandal dentro do botão */
 .vandal-img {
-    height: 60px;
+    height: 50px; /* Reduzido levemente para encaixar arquivos webp grandes */
     width: auto;
     filter: drop-shadow(0 0 5px rgba(255, 70, 85, 0.5));
     position: relative;
@@ -124,7 +121,6 @@ body.segunda-pagina {
     transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* Efeitos de Hover (Quando o mouse passa em cima) */
 .vandal-btn:hover::before {
     width: 100%;
 }
@@ -134,12 +130,10 @@ body.segunda-pagina {
 }
 
 .vandal-btn:hover .vandal-img {
-    /* Faz a Vandal apontar levemente pra frente e brilhar branco */
     transform: translateX(10px) scale(1.05);
     filter: brightness(2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
-/* Efeito de glitch/foco ao clicar */
 .vandal-btn:active {
     transform: scale(0.98);
 }
