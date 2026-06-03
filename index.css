@@ -1,11 +1,95 @@
-.body {
+/* Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: center;
 }
-button {
-    margin: 15px;
-    padding: 0;
+
+/* Fundo */
+body.re4_nav {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
     text-align: center;
+
+    /* Escurece a imagem */
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("imagens_do_projeto/re4rem_background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Título */
+h1 {
+    margin-top: 40px;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 40px #700000;
+}
+
+/* Menu */
+.Menu {
+    margin: 30px auto;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    width: fit-content;
+
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+/* Links do menu */
+.Menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    padding: 10px 18px;
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.Menu a:hover {
+    background-color: #b30000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Texto */
+p {
+    max-width: 900px;
+
+    margin: 40px auto;
+    padding: 25px;
+
+    line-height: 1.8;
+    font-size: 1.1rem;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(5px);
+
+    border-left: 4px solid #b30000;
+    border-radius: 10px;
+
+    text-align: justify;
 }
